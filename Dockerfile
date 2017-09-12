@@ -66,4 +66,4 @@ RUN set -ex; make -j1 busybox
 
 # ENTRYPOINT ["/busybox/busybox", "sh"]
 # remember: for i in /corpus/*; do afl-tmin -i $i -o $i.min -- /busybox/busybox unzip @@ -oqd /tmp; done;
-ENTRYPOINT ["afl-fuzz", "-i", "/corpus/", "-o", "/outdir", "/busybox/busybox unzip @@ -oqd /tmp"]
+ENTRYPOINT ["afl-fuzz", "-i", "/corpus/", "-o", "/outdir", "/busybox/busybox", "unzip" , "@@", "-oqd", "/tmp"]
